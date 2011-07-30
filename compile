@@ -1,0 +1,2 @@
+(cljsc/build "src" {:optimizations :advanced :output-dir "out" :output-to "client.js"})
+
