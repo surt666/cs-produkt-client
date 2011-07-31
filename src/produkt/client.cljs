@@ -2,6 +2,8 @@
  (:require [produkt.ajax :as ajax]
            [goog.dom :as dom]))
 
+(def base-url "http://localhost:8080/produkt/")
+
 (defn- generate-options [data]
   (reduce str (map #(str "<option id=\"" (:id %) "\">" (:navn %) "</option>") data)))
 
@@ -13,8 +15,8 @@
    (dom/insertChildAt elem options 0)))
 
 (defn doajax []
-  (produkt.ajax/get-uri "http://localhost:8080/produkt/findalle/hardware" (partial select-data "hardware"))
-  (produkt.ajax/get-uri "http://localhost:8080/produkt/findalle/services" (partial select-data "services"))
-  (produkt.ajax/get-uri "http://localhost:8080/produkt/findalle/produkter" (partial select-data "produkter")))
+  (produkt.ajax/get-uri (str base-url "findalle/hardware") (partial select-data "hardware"))
+  (produkt.ajax/get-uri (str base-url "findalle/services") (partial select-data "services"))
+  (produkt.ajax/get-uri (str base-url "findalle/produkter") (partial select-data "produkter")))
 
 (doajax)
