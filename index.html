@@ -1,5 +1,10 @@
+<!doctype html>
 <html>
-  <head></head>
+  <head>
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/custombutton.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+  </head>
   <body>
     <div id="test"></div>
     <script type="text/javascript" src="client.js"></script>
@@ -18,7 +23,7 @@
               <select id="hardware" name="hardware" multiple="multiple"></select> 
               <label for="services">Services:</label>
               <select id="services" name="services" multiple="multiple"></select></p>          
-            <p><input type="submit" id="submit_p" value="Opret" /></p>          
+            <p><div id="submit_p"></div></p>          
         </div>
         <div id="right">
           <h3>META</h3>          
@@ -26,7 +31,7 @@
             <input type="text" id="key" />
             <label for="value">Value:</label>
             <input type="text" id="value" />
-            <input type="button" id="button_m" value="Add" />
+            <div id="button_m"></div>
           </p>
           <ul id="meta"></ul>         
         </div>                
@@ -35,5 +40,8 @@
     <div id="menu">
       <p><a href="service.html">Opret service</a>&nbsp;<a href="hardware.html">Opret hardware</a></p>
     </div>
+    <script>
+      produkt.client.main();
+    </script>
   </body>
 </html>
