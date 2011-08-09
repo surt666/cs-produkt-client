@@ -4,12 +4,21 @@
     <link type="text/css" rel="stylesheet" href="css/common.css">
     <link type="text/css" rel="stylesheet" href="css/custombutton.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/roundedtab.css">
+    <link type="text/css" rel="stylesheet" href="css/tab.css">
+    <link type="text/css" rel="stylesheet" href="css/tabbar.css">
   </head>
   <body>
-    <div id="test"></div>
     <script type="text/javascript" src="client.js"></script>
-    <h3>Produkt</h3>  
-      <form action="" id="produkt"> 
+    <!-- The tabbar will go in here-->
+    <div id="menu" class="goog-tab-bar goog-tab-bar-top">
+      <div class="goog-rounded-tab goog-rounded-tab-selected">Produkt</div>
+      <div class="goog-rounded-tab">Services</div>
+      <div class="goog-rounded-tab">Hardware</div>
+    </div>    
+    <!-- Use goog-tab-bar-clear to separate the tabs from the content. --> 
+    <div class="goog-tab-bar-clear"></div> 
+    <div id="produkt_content" class="goog-tab-content"> 
         <div id="left">                    
             <p><label for="produkter">Produkter:</label>
               <select id="produkter" name="produkter" size="6"></select> 
@@ -34,11 +43,44 @@
             <div id="button_m"></div>
           </p>
           <ul id="meta"></ul>         
-        </div>                
-      </form>                
-    </div>    
-    <div id="menu">
-      <p><a href="service.html">Opret service</a>&nbsp;<a href="hardware.html">Opret hardware</a></p>
+        </div>                        
+    </div> 
+    <div id="services_content" class="hid">     
+          <p><label for="services">Services:</label>
+          <select id="services" name="services" size="6"></select></p> 
+          <p><label for="id">Id:</label>
+          <input type="text" id="id" />
+          <label class="error" for="id" id="id_error">This field is required.</label></p>  
+          <p><label for="navn">Navn:</label>
+          <input type="text" id="navn" />
+          <label class="error" for="navn" id="navn_error">This field is required.</label></p> 
+          <p><label for="prov_system">Provisionerings system:</label>
+          <input type="text" id="prov_system" />
+          <label class="error" for="prov_system" id="prov_system_error">This field is required.</label></p> 
+          <p><label for="prov_id">Provisionerings id:</label>
+          <input type="text" id="prov_id" />
+          <label class="error" for="prov_id" id="prov_id_error">This field is required.</label></p>               
+          <p><div id="submit_s"></div></p>        
+    </div>
+    <div id="hardware_content" class="hid">       
+        <p><label for="hardware">Hardware:</label>
+          <select id="hardware" name="hardware" multiple="multiple"></select></p> 
+        <p><label for="id">Id:</label>
+          <input type="text" id="id" />
+          <label class="error" for="id" id="id_error">This field is required.</label></p>  
+        <p><label for="navn">Navn:</label>
+          <input type="text" id="navn" />
+          <label class="error" for="navn" id="navn_error">This field is required.</label></p> 
+        <p><label for="logistik_system">Logistik system:</label>
+          <input type="text" id="logistik_system" />
+          <label class="error" for="logistik_system" id="logistik_system_error">This field is required.</label></p>
+        <p><label for="logistik_kode">Logistik kode:</label>
+          <input type="text" id="logistik_kode" />
+          <label class="error" for="logistik_kode" id="logistik_kode_error">This field is required.</label></p> 
+        <p><label for="har_sn">Har serienummer:</label>
+          <input type="checkbox" id="har_sn" />
+          <label class="error" for="har_sn" id="har_sn_error">This field is required.</label></p>   
+        <p><div id="submit_hw"></div></p>         
     </div>
     <script>
       produkt.client.main();

@@ -18,7 +18,22 @@
     text-align: left;
  } 
 
-#menu {
-    position: absolute;
-    bottom: 0;
+fieldset {
+padding:10px;
+	border:1px solid #369;
 }
+.goog-tab-content {
+	margin:0;
+	border:1px solid #6b90da;
+	border-top:0;
+	padding:4px 8px;
+	background:#fff;
+	overflow:auto;
+}
+.hid {
+	display: none;
+}
+/* #menu { */
+/*     position: absolute; */
+/*     bottom: 0; */
+/* } */
