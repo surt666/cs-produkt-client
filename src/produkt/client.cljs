@@ -32,7 +32,7 @@
 
 (defn init-tabbar []
   (doall (map #(. tabbar (addChild (goog.ui.Tab. %) true)) ["Produkt" "Services" "Hardware"]))
-  (. tabbar (setSelectedTabIndex 0)))
+  (do (. tabbar (setSelectedTabIndex 0))))
 
 (defn- generate-options [data]
   (reduce str (map #(str "<option id=\"" (:id %) "\">" (:navn %) "</option>") data)))
@@ -65,8 +65,7 @@
 
 (defn ^:export main [] 
   ;(doajax)
-  ;;((js* "alert") (dom/getOuterHtml (dom/getElement "produkt_content")))
-  ;;(init-tabbar)
+  ;(init-tabbar)
   (.render opret-button (dom/getElement "submit_p"))
   (.render opret-meta-button (dom/getElement  "button_m"))
   (.render opret-service-button (dom/getElement  "submit_s"))
