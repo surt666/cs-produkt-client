@@ -52,6 +52,13 @@
 (defn event1 []
   ((js* "alert") "BLA"))
 
+(defn metaevent []
+  (let [meta (dom/getElement "meta")
+        key (.value (dom/getElement "key"))
+        val (.value (dom/getElement "value"))
+        listelem (str "<li id=" key ">" key " : " val "</li>")]
+    (dom/insertChildAt meta (dom/htmlToDocumentFragment listelem) 0)))
+
 (defn hideall []
   (doall (map #(domclass/swap (dom/getElement %) "goog-tab-content" "hid") ["produkt_content" "services_content" "hardware_content"])))
 
@@ -89,7 +96,7 @@
   (.listen goog.events
            opret-meta-button
            goog.ui.Component.EventType/ACTION
-           event1)
+           metaevent)
   
   (.listen goog.events
            tabbar
